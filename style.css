@@ -80,6 +80,7 @@ body {
   margin: auto;
   padding-top: 2rem;
   border-radius: 10px;
+  pointer-events: none;
   background: var(--secondary);
 }
 .hours-minutes-seconds {
