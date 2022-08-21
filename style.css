@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary: #ff9b20;
+  --secondary: #383838;
+  --tertiary: #1c97d5;
+  --light-brown: #CA955C;
+  --dark-brown: #876445;
+  --shadow-1: 10px 4px 15px rgba(0,0,0,0.5);
+  --shadow-2: 20px 10px 10px rgba(0,0,0,0.5);
+}
+body {
+  background: #FFF9CA;
+  font-family: 'Work Sans', sans-serif;
+}
+.container {
+  position: absolute;
+  margin: auto;
+  width: 85rem;
+  max-height: 41rem;
+}
+.clock {
+  position: absolute;
+  margin: 10rem auto auto auto;
+  width: 480px;
+  height: 220px;
+  border-radius: 10px;
+  background: var(--tertiary);
+  box-shadow: var(--shadow-1);
+}
+.clock:before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 10px;
+  border-radius: 6px 6px 0 0;
+  top: -10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: var(--primary);
+}
+.clock:after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 15px;
+  border-radius: 0 0 10px 10px;
+  left: 65px;
+  bottom: -15px;
+  background: var(--secondary);
+  box-shadow: 325px 0 0 var(--secondary);
+}
+.button1,
+.button2 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px;
+  border-radius: 50%;
+}
+.button1 {
+  top: 35px;
+  background: #e10000;
+}
+.button2 {
+  top: 70px;
+  background: rgb(10, 157, 10);
+}
+.display {
+  position: absolute;
+  text-align: center;
+  width: 400px;
+  height: 170px;
+  margin: auto;
+  padding-top: 2rem;
+  border-radius: 10px;
+  background: var(--secondary);
+}
+.hours-minutes-seconds {
+  font-size: 70px;
+  color: var(--primary);
+}
+.am-pm {
+  font-size: 24px;
+  color: var(--primary);
+}
+.date {
+  font-size: 20px;
+  color: var(--primary);
+}
+.container,
+.clock,
+.display {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.hidden {
+  visibility: hidden;
+}
+.cabinet {
+  position: absolute;
+  width: 750px;
+  height: 15rem;
+  bottom: 1.5rem;
+  left: 20rem;
+  background: var(--dark-brown);
+  box-shadow: var(--shadow-2);
+}
+.cabinet:after {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 24px;
+  border-radius: 0 0 30px 30px;
+  left: 100px;
+  bottom: -24px;
+  background: var(--secondary);
+  box-shadow: 500px 0 0 var(--secondary);
+}
+.first-drawer, 
+.second-drawer {
+  position: absolute;
+  width: 43rem;
+  height: 6rem;
+  right: 2rem;
+  border: 4px solid var(--secondary);
+  background: var(--light-brown)
+}
+.first-drawer {
+  top: 1rem;
+}
+.second-drawer {
+  bottom: 1rem;
+}
+.drawer-knob {
+  position: absolute;
+  background: var(--secondary);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.drawer-knob {
+  top: 1.8rem;
+  left: 19rem;
+}
+.table-wood,
+.table-support,
+.table-foot {
+  position: absolute;
+  box-shadow: var(--shadow-2);
+}
+.table-support,
+.table-foot {
+  bottom: 0;
+  background: var(--secondary);
+}
+.table-wood {
+  width: 180px;
+  height: 1.1rem;
+  bottom: 9.6rem;
+  left: 1rem;
+  background: var(--light-brown);
+}
+.table-support {
+  width: 1.2rem;
+  height: 9.6rem;
+  left: 5.9rem;
+}
+.table-foot {
+  width: 5em;
+  height: 1rem;
+  left: 4rem;
+}
+.window,
+.window-background,
+.vertical-line, 
+.horizontal-line {
+  right: 0;
+  position: absolute;
+  background: var(--secondary);
+}
+.window {
+  width: 180px;
+  height: 14rem;
+  top: 2rem;
+}
+.window-background {
+  width: 160px;
+  height: 12rem;
+  top: 1rem;
+  background: #77d2ff;
+}
+.vertical-line {
+  width: 10rem;
+  height: 1rem;
+  top: 6.6rem;
+}
+.horizontal-line {
+  width: 1rem;
+  height: 14rem;
+  top: 0;
+  right: 2rem;
+}
+small {
+  position: absolute;
+  bottom: 12rem;
+  left: 2.1rem;
+  text-align: center;
+  text-underline-offset: none;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Work Sans', sans-serif;
+  animation: bounce 4s infinite;
+  color: var(--secondary);
+}
+@keyframes bounce {
+  50% {
+    transform: translateY(20px);
+  }
+}
+small a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+  width: 89%;
+  height: 2px;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: bottom right;
+  background: var(--tertiary);
+}
+small a:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+small a {
+  text-decoration: none;
+  color: var(--tertiary)
+}
+small a:active {
+  color: var(--primary);
+}
+small a:visited {
+  color: var(--secondary);
+}
